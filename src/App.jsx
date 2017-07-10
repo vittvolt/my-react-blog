@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './thw.svg';
 import './App.css';
-import Menu from './menu.js';
+import Menu from './menu.jsx';
 
 class App extends Component {
   render() {
