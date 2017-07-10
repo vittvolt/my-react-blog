@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-intro {
+  font-family: Paint;
+  font-size: 100px;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.menu-list {
+    list-style:none;
+    display: inline-block;
+}
+
+.menu-list li{
+    font-size:20px;
+    display: inline-block;
+    padding: 20px 150px;
+    cursor:pointer;
+    background-color:white;
+    color:#7B8585;
+
+    transition:0.3s;
+}
+
+.menu-list li:hover{
+    background-color:#beecea;
+}
+
+.menu-list li.focused{
+    color:#fff;
+    background-color:#cbced3;
+}
+
+.menu-p {
+    padding-top:15px;
+    font-size:20px;
+}
+
+.my-icon {
+  position: absolute;
+  top: 18px;
+  left: 12px;
+  animation: App-logo-spin infinite 20s linear;
+  height: 60px;
+}
+
+@font-face {
+  font-family: Paint;
+  src: url('./fonts/BLOODY.ttf');
+}
