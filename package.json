@@ -24,14 +24,16 @@
     "url-loader": "^0.5.9",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.5.1",
-    "npm-run-all": "^4.0.2"
+    "npm-run-all": "^4.0.2",
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3"
   },
   "scripts": {
     "clean": "rimraf dist && mkdirp dist",
     "copy:fonts": "cpx \"./src/fonts/*.ttf\" ./dist/fonts",
     "packypacky": "webpack",
     "build": "npm-run-all clean --parallel copy:* packypacky",
-    "start": "node ./dist/backend.js",
+    "start": "node ./dist/server.js",
     "dev-server": "webpack-dev-server --host=0.0.0.0 --port=3000 --content-base dist/ --history-api-fallback",
 
     "start-old": "react-scripts start",

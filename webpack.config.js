@@ -23,7 +23,7 @@ var backendConfig = {
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/',
-    filename: 'backend.js'
+    filename: 'server.js'
   },
   externals: nodeModules
 };
@@ -72,10 +72,10 @@ var browserConfig = {
     new HtmlWebpackPlugin({
       title: 'Blog',
       template: './public/index.html',
-      favicon: './public/favicon.ico',
+      favicon: './public/thw_icon.ico',
       inject: true
     })
   ]
 };
 
-module.exports = [browserConfig];
+module.exports = [backendConfig, browserConfig];
