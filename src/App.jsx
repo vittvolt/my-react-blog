@@ -42,7 +42,7 @@ class App extends Component {
 class Content extends Component {
   render() {
     return (
-      <div className="App-intro">
+      <div className="App-text">
         <Markdown>
           {this.props.text}
         </Markdown>
