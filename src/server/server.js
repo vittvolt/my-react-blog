@@ -7,15 +7,15 @@ const io = socket.listen(server);
 
 const fs = require('fs');
 
-var posts;
-let mdfile = path.resolve('dist', 'posts', 'post1.md');
-fs.readFile(mdfile, "utf8", function(err, data) {
-  if (err) {
-    console.log('Boom !');
-    throw err;
-  } else {
-    posts = data;
-  }
+// TODO:
+// - Read the # of files first, return the information to the client,
+// which is used during initialization
+
+var numOfPosts;
+let postsDir = path.resolve('dist', 'posts');
+fs.readdir(postsDir, (err, files) => {
+  console.log("There are currently %d posts.", files.length);
+  numOfPosts = files.length;
 });
 
 // The index page

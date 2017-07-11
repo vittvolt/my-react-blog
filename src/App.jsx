@@ -33,13 +33,13 @@ class App extends Component {
 
         <Menu items={ ['Home', 'Posts', 'About'] } />
 
-        <Welcome text={this.state.text}> </Welcome>
+        <Content text={this.state.text}> </Content>
       </div>
     );
   }
 }
 
-class Welcome extends Component {
+class Content extends Component {
   render() {
     return (
       <div className="App-intro">

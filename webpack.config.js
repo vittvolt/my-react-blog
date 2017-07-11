@@ -59,13 +59,6 @@ var browserConfig = {
     ]
   },
   plugins: [
-    new webpack.ProvidePlugin({
-      // Automtically detect jQuery and $ as free var in modules
-      // and inject the jquery library
-      // This is required by many jquery plugins
-      jQuery: 'jquery',
-      $: 'jquery'
-    }),
     new webpack.DefinePlugin({
       __HIDE_DATA__: !!process.env.HIDE_DATA
     }),

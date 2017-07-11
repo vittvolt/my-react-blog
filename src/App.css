@@ -2,11 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
 .App-intro {
   font-family: Paint;
   font-size: 20px;
@@ -49,10 +44,10 @@
 
 .my-icon {
   position: absolute;
-  top: 18px;
+  top: 15px;
   left: 12px;
-  animation: App-logo-spin infinite 20s linear;
-  height: 60px;
+  /*animation: App-logo-spin infinite 20s linear;*/
+  height: 80px;
 }
 
 @font-face {
