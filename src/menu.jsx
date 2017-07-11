@@ -38,7 +38,7 @@ class Menu extends Component {
                     // Notice the use of the bind() method. It makes the
                     // index available to the clicked function:
 
-                    return <li className={style} onClick={self.clicked.bind(self, index)}>{m}</li>;
+                    return <li className={style} onClick={self.clicked.bind(self, index)} key={m}>{m}</li>;
 
                 }) }
 
