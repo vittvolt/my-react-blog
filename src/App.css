@@ -8,6 +8,7 @@ body {
 
 .App-welcome {
   font-family: Paint;
+  color: white;
   font-size: 40px;
   width: 60%;
   margin: 0 auto;
@@ -27,7 +28,7 @@ body {
   -moz-transition: all 0.5s;
   transition: all 0.5s;
 
-  font-size: 1.5em;
+  font-size: 0.8em;
   color: #228DFF;
   font-family: Iceland;
 
@@ -42,6 +43,7 @@ body {
 
 .App-text {
   font-family: Helvetica, arial, sans-serif;
+  color: white;
   font-size: 20px;
   width: 50%;
   margin: 0 auto;
