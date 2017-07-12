@@ -8,6 +8,7 @@ class Menu extends Component {
     }
 
     clicked(index) {
+        this.setState({focused: index});
         this.props.handleClick(index);
     }
 

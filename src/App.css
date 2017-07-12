@@ -11,10 +11,15 @@
 }
 
 .App-text {
+  font-family: Helvetica, arial, sans-serif;
   font-size: 20px;
-  width: 60%;
+  width: 50%;
   margin: 0 auto;
   text-align: left;
+  /*
+  border:1px solid black;
+  padding: 20px;
+  */
 }
 
 @keyframes App-logo-spin {
