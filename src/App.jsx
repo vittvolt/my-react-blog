@@ -5,12 +5,25 @@ import Menu from './menu.jsx';
 import axios from 'axios';
 import Markdown from 'react-remarkable';
 
+// The tabs at the top
+const tabs = [
+  {'id' : 1, 'title' : 'Home'},
+  {'id' : 2, 'title' : 'Posts'},
+  {'id' : 3, 'title' : 'About'}
+]
+
+// Welcome string
+const welcome = "Welcome !"
+
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      text: "Hello"
+      currIndex: 0,
+      welcomeStr: welcome,
+      text: "",
+      aboutText: "About me..."
     };
   }
 
@@ -25,15 +38,23 @@ class App extends Component {
       });
   }
 
+  // Update the tab views
+  handleClick(index) {
+    // console.log(index);
+    this.setState({currIndex: index});
+  }
+
   render() {
     return (
       <div className="App">
 
         <img src={logo} className="my-icon" alt="logo" />
 
-        <Menu items={ ['Home', 'Posts', 'About'] } />
+        <Menu items={ tabs } handleClick={this.handleClick.bind(this)} />
 
-        <Content text={this.state.text}> </Content>
+        {this.state.currIndex === 0 ? <Content text={this.state.welcomeStr} class={"App-welcome"} /> : null}
+        {this.state.currIndex === 1 ? <Content text={this.state.text} class={"App-text"} /> : null}
+        {this.state.currIndex === 2 ? <Content text={this.state.aboutText} class={"App-welcome"} /> : null}
       </div>
     );
   }
@@ -42,7 +63,7 @@ class App extends Component {
 class Content extends Component {
   render() {
     return (
-      <div className="App-text">
+      <div className={this.props.class}>
         <Markdown>
           {this.props.text}
         </Markdown>

@@ -2,8 +2,15 @@
   text-align: center;
 }
 
-.App-text {
+.App-welcome {
   font-family: Paint;
+  font-size: 40px;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.App-text {
   font-size: 20px;
   width: 60%;
   margin: 0 auto;
