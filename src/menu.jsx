@@ -25,7 +25,13 @@ class Menu extends Component {
                         style = 'focused';
                     }
 
-                    return <li className={style} onClick={self.clicked.bind(self, index)} key={m.id}>{m.title}</li>;
+                    return <li onClick={self.clicked.bind(self, index)} key={m.id}>
+                        <p className='Neon-p'>
+                            <a>
+                                {m.title}
+                            </a>
+                        </p>
+                    </li>;
 
                 }) }
 
