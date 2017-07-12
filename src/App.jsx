@@ -23,7 +23,7 @@ class App extends Component {
       currIndex: 0,
       welcomeStr: welcome,
       text: "",
-      aboutText: "About me..."
+      aboutText: welcome
     };
   }
 
@@ -52,7 +52,7 @@ class App extends Component {
 
         <Menu items={ tabs } handleClick={this.handleClick.bind(this)} />
 
-        {this.state.currIndex === 0 ? <Content text={this.state.welcomeStr} class={"App-welcome"} /> : null}
+        {this.state.currIndex === 0 ? <Content art={1} text={this.state.welcomeStr} class={"App-welcome"} /> : null}
         {this.state.currIndex === 1 ? <Content text={this.state.text} class={"App-text"} /> : null}
         {this.state.currIndex === 2 ? <Content text={this.state.aboutText} class={"App-welcome"} /> : null}
       </div>
@@ -64,9 +64,17 @@ class Content extends Component {
   render() {
     return (
       <div className={this.props.class}>
-        <Markdown>
-          {this.props.text}
-        </Markdown>
+        {this.props.art ?
+          <p className="Neon-t">
+            <a>
+              T
+            </a>
+          </p>
+          :
+          <Markdown>
+            {this.props.text}
+          </Markdown>
+        }
       </div>
     );
   }

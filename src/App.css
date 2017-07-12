@@ -15,10 +15,10 @@ body {
   text-align: center;
 }
 
-.Neon-p {
+.Neon-p, .Neon-t {
   text-align: center;
   font-size: 7em;
-  margin: 20px 0 20px 0;
+  margin: 0px 0px 0px 0px;
 }
 
 /* https://codepen.io/FelixRilling/pen/qzfoc */
@@ -28,13 +28,34 @@ body {
   -moz-transition: all 0.5s;
   transition: all 0.5s;
 
-  font-size: 0.8em;
+  font-size: 0.5em;
   color: #228DFF;
   font-family: Iceland;
 
   -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
   -moz-animation: neon2 1.5s ease-in-out infinite alternate;
   animation: neon2 1.5s ease-in-out infinite alternate;
+}
+
+.Neon-t a {
+  text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+
+  color: #fff;
+  font-family: Monoton;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
+
+.Neon-t a:hover {
+  color: #FF1177;
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+  cursor: pointer;
 }
 
 .Neon-p a:hover {
@@ -68,7 +89,7 @@ body {
 .menu-list li{
     /* font-size:20px; */
     display: inline-block;
-    padding: 20px 150px;
+    padding: 0px 90px;
     cursor:pointer;
     /* background-color:white; */
     /* color:#7B8585; */
@@ -111,5 +132,14 @@ body {
   }
   to {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+  }
+}
+
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
   }
 }
