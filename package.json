@@ -1,4 +1,11 @@
 {
+  "watch": {
+    "build-start": {
+      "patterns": ["src", "public"],
+      "extensions": "html,js,jsx,css,svg,md,ico",
+      "quiet": false
+    }
+  },
   "name": "thw-blog",
   "version": "0.1.0",
   "private": true,
@@ -11,7 +18,6 @@
     "redux": "^3.7.1"
   },
   "devDependencies": {
-    "react-scripts": "1.0.10",
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
@@ -24,13 +30,15 @@
     "html-loader": "^0.4.5",
     "html-webpack-plugin": "^2.29.0",
     "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.0.2",
+    "npm-watch": "^0.2.0",
+    "react-scripts": "1.0.10",
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3",
     "style-loader": "^0.18.2",
     "url-loader": "^0.5.9",
     "webpack": "^2.2.0",
-    "webpack-dev-server": "^2.5.1",
-    "npm-run-all": "^4.0.2",
-    "socket.io": "^2.0.3",
-    "socket.io-client": "^2.0.3"
+    "webpack-dev-server": "^2.5.1"
   },
   "scripts": {
     "clean": "rimraf dist && mkdirp dist",
@@ -39,6 +47,8 @@
     "packypacky": "webpack",
     "build": "npm-run-all clean --parallel copy:* packypacky",
     "start": "node ./dist/server.js",
+    "build-start": "npm-run-all build start",
+    "watch-build-start": "npm-watch build-start",
     "dev-server": "webpack-dev-server --host=0.0.0.0 --port=3000 --content-base dist/ --history-api-fallback",
     "start-old": "react-scripts start",
     "build-old": "react-scripts build",

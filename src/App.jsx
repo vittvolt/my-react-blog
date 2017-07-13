@@ -13,7 +13,7 @@ const tabs = [
 ]
 
 // Welcome string
-const welcome = "Been there, never done that."
+const welcome = "Been there, never done that"
 
 class App extends Component {
   constructor(props) {
