@@ -50,6 +50,10 @@ class App extends Component {
 
         <img src={logo} className="my-icon" alt="logo" />
 
+        <div className="Banner">
+          Github
+        </div>
+
         <Menu items={ tabs } handleClick={this.handleClick.bind(this)} />
 
         {this.state.currIndex === 0 ? <Content art={1} text={this.state.welcomeStr} class={"App-welcome"} /> : null}

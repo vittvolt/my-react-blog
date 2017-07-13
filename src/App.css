@@ -121,6 +121,21 @@ body {
   height: 80px;
 }
 
+.Banner {
+  position: absolute;
+  right: 12px;
+  top: 60px;
+  color: purple;
+  font-size: 40pt;
+  font-weight: bold;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  -sand-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
 @font-face {
   font-family: Paint;
   src: url('./fonts/BLOODY.ttf');
