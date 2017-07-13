@@ -115,8 +115,8 @@ body {
 
 .my-icon {
   position: absolute;
-  top: 15px;
-  left: 12px;
+  top: 30px;
+  left: 24px;
   /*animation: App-logo-spin infinite 20s linear;*/
   height: 80px;
 }
@@ -134,6 +134,12 @@ body {
   -o-transform: rotate(45deg);
   -sand-transform: rotate(45deg);
   transform: rotate(45deg);
+  cursor: pointer;
+  text-decoration: none;
+
+  -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+  animation: neon3 1.5s ease-in-out infinite alternate;
 }
 
 @font-face {
@@ -156,5 +162,14 @@ body {
   }
   to {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  }
+}
+
+@-webkit-keyframes neon3 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px purple, 0 0 70px purple, 0 0 80px purple, 0 0 100px purple, 0 0 150px purple;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px purple, 0 0 35px purple, 0 0 40px purple, 0 0 50px purple, 0 0 75px purple;
   }
 }

@@ -50,9 +50,9 @@ class App extends Component {
 
         <img src={logo} className="my-icon" alt="logo" />
 
-        <div className="Banner">
+        <a className="Banner" href="https://github.com/vittvolt">
           Github
-        </div>
+        </a>
 
         <Menu items={ tabs } handleClick={this.handleClick.bind(this)} />
 
