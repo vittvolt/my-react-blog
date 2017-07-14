@@ -1,11 +1,10 @@
 body {
-  background-color: #222222;
-
   /* http://lea.verou.me/css3patterns/#weave */
   background:
-  linear-gradient(135deg, #222222 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
-  linear-gradient(225deg, #222222 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+  linear-gradient(135deg, #222222 22px, #353535 22px, #353535 24px, transparent 24px, transparent 67px, #353535 67px, #353535 69px, transparent 69px),
+  linear-gradient(225deg, #222222 22px, #353535 22px, #353535 24px, transparent 24px, transparent 67px, #353535 67px, #353535 69px, transparent 69px)0 64px;
   background-color:#222222;
+  /* This size defines the size of each linear-gradient image */
   background-size: 64px 128px;
 }
 
