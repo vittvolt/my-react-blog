@@ -2,7 +2,7 @@
   "watch": {
     "build-start": {
       "patterns": ["src", "public"],
-      "extensions": "html,js,jsx,css,svg,md,ico",
+      "extensions": "html,js,jsx,css",
       "quiet": false
     }
   },
