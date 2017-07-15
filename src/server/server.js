@@ -28,7 +28,24 @@ app.get('/browser.js', (req, res) => {
   res.sendFile(path.resolve('dist', './browser.js'));
 });
 
-// In fonts folder
+// All the other files should go to the dist folder
+app.get('/*.svg', (req, res) => {
+  res.sendFile(path.resolve('dist', '.' + req.originalUrl));
+});
+
+app.get('/*.ico', (req, res) => {
+  res.sendFile(path.resolve('dist', '.' + req.originalUrl));
+});
+
+app.get('/*.svg', (req, res) => {
+  res.sendFile(path.resolve('dist', '.' + req.originalUrl));
+});
+
+app.get('/*.ttf', (req, res) => {
+  res.sendFile(path.resolve('dist', '.' + req.originalUrl));
+});
+
+// In fonts folder ?
 app.get('/fonts/*.css', (req, res) => {
   res.sendFile(path.resolve('dist', 'fonts', 'source-sans-pro.css')); // if you think hardcoding is bad, change it yourself
 });
@@ -48,11 +65,10 @@ app.get('/posts', (req, res) => {
   // res.send(posts);
 });
 
-// All the other files should go to the current folder
-app.get('/*', (req, res) => {
-  res.sendFile(path.resolve('dist', '.' + req.originalUrl));
+// The left is for pickup client-side path routing (liking when refreshing / providing a complete url)
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve('dist', './index.html'));
 });
-
 
 io.on('connection', function(socket) {
   socket.on('i am client', (d) => {console.log('received i am client from client !')});

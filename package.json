@@ -1,7 +1,10 @@
 {
   "watch": {
     "build-start": {
-      "patterns": ["src", "public"],
+      "patterns": [
+        "src",
+        "public"
+      ],
       "extensions": "html,js,jsx,css",
       "quiet": false
     }
@@ -15,6 +18,7 @@
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
     "react-remarkable": "^1.1.1",
+    "react-router-dom": "^4.1.1",
     "redux": "^3.7.1"
   },
   "devDependencies": {

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Menu extends Component {
 
@@ -9,7 +10,7 @@ class Menu extends Component {
 
     clicked(index) {
         this.setState({focused: index});
-        this.props.handleClick(index);
+        // this.props.handleClick(index);
     }
 
     render() {
@@ -27,9 +28,9 @@ class Menu extends Component {
 
                     return <li onClick={self.clicked.bind(self, index)} key={m.id}>
                         <p className='Neon-p'>
-                            <a>
+                            <Link to={'/welcome'} className='Blue-neon'>
                                 {m.title}
-                            </a>
+                            </Link>
                         </p>
                     </li>;
 
