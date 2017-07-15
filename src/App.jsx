@@ -57,7 +57,8 @@ class App extends Component {
         <Menu items={ tabs } handleClick={this.handleClick.bind(this)} />
 
         {this.state.currIndex === 0 ? <Content art={1} text={this.state.welcomeStr} class={"App-welcome"} /> : null}
-        {this.state.currIndex === 1 ? <Content text={this.state.text} class={"App-text"} /> : null}
+        {/* this.state.currIndex === 1 ? <Content text={this.state.text} class={"App-text"} /> : null */}
+        {this.state.currIndex === 1 ? <Posts text={this.state.text} class={"App-text"}/> : null}
         {this.state.currIndex === 2 ? <Content text={this.state.aboutText} class={"App-welcome"} /> : null}
       </div>
     );
@@ -79,6 +80,25 @@ class Content extends Component {
             {this.props.text}
           </Markdown>
         }
+      </div>
+    );
+  }
+}
+
+class Posts extends Component {
+  render() {
+    return (
+      <div className={this.props.class}>
+        <div>
+          <Markdown>
+            {this.props.text}
+          </Markdown>
+        </div>
+        <div>
+          <Markdown>
+            {this.props.text}
+          </Markdown>
+        </div>
       </div>
     );
   }
