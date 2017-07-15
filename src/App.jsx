@@ -8,9 +8,9 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 // The tabs at the top
 const tabs = [
-  {'id' : 1, 'title' : 'Home'},
-  {'id' : 2, 'title' : 'Posts'},
-  {'id' : 3, 'title' : 'About'}
+  {'id' : 1, 'title' : 'Home', 'route' : '/home'},
+  {'id' : 2, 'title' : 'Posts', 'route' : '/allposts'},
+  {'id' : 3, 'title' : 'About', 'route' : '/about'}
 ]
 
 // Welcome string
@@ -58,16 +58,23 @@ class App extends Component {
 
           <Menu items={ tabs } handleClick={this.handleClick.bind(this)} />
 
-          <Route path='/welcome' render={(props) => (
+          <Route path='/home' render={(props) => (
             <Content {...props} art={1} text={this.state.welcomeStr} class={"App-welcome"} />
           )}/>
 
+          {/* Default route is the home component as well */}
+          <Route exact path='/' render={(props) => (
+            <Content {...props} art={1} text={this.state.welcomeStr} class={"App-welcome"} />
+          )}/>
 
+          <Route path='/allposts' render={props => (
+            <Posts {...props} text={this.state.text} class={"App-text"} />
+          )}/>
 
-          {/*
-          {this.state.currIndex === 0 ? <Content art={1} text={this.state.welcomeStr} class={"App-welcome"} /> : null}
-          {this.state.currIndex === 1 ? <Posts text={this.state.text} class={"App-text"}/> : null}
-          {this.state.currIndex === 2 ? <Content text={this.state.aboutText} class={"App-welcome"} /> : null} */}
+          <Route path='/about' render={props => (
+            <Content {...props} text={this.state.aboutText} class={"App-welcome"} />
+          )}/>
+
         </div>
       </BrowserRouter>
     );

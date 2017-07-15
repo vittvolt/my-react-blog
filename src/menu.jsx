@@ -20,15 +20,9 @@ class Menu extends Component {
             <div>
                 <ul className="menu-list">{ this.props.items.map(function(m, index){
 
-                    var style = '';
-
-                    if(self.state.focused === index){
-                        style = 'focused';
-                    }
-
                     return <li onClick={self.clicked.bind(self, index)} key={m.id}>
                         <p className='Neon-p'>
-                            <Link to={'/welcome'} className='Blue-neon'>
+                            <Link to={m.route} className='Blue-neon'>
                                 {m.title}
                             </Link>
                         </p>
