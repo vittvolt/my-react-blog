@@ -155,7 +155,7 @@ body {
 
 @font-face {
   font-family: Paint;
-  src: url('./fonts/BLOODY.ttf');
+  src: url('../fonts/BLOODY.ttf');
 }
 
 @-webkit-keyframes neon2 {

@@ -50,8 +50,8 @@ app.get('/fonts/*.css', (req, res) => {
   res.sendFile(path.resolve('dist', 'fonts', 'source-sans-pro.css')); // if you think hardcoding is bad, change it yourself
 });
 
-// return the posts
-app.get('/posts', (req, res) => {
+// return the brief information (titles, simple description, etc.)
+app.get('/posts/brief', (req, res) => {
   let mdfile = path.resolve('dist', 'posts', 'post1.md');
   fs.readFile(mdfile, "utf8", (err, data) => {
     if (err) {
@@ -61,8 +61,6 @@ app.get('/posts', (req, res) => {
       res.send(data);
     }
   });
-
-  // res.send(posts);
 });
 
 // The left is for pickup client-side path routing (liking when refreshing / providing a complete url)
@@ -76,9 +74,6 @@ io.on('connection', function(socket) {
 
 
 server.listen(5000);
-// app.listen(3000, function () {
-//   console.log('Hell yea...');
-// });
 
 // Put a friendly message on the terminal
-console.log("Server running at http://127.0.0.1:3000/");
+console.log("Server running at http://127.0.0.1:5000/");

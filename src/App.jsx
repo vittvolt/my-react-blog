@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
-import logo from './thw.svg';
-import './App.css';
+import logo from './static/thw.svg';
+import './css/App.css';
 import Menu from './menu.jsx';
 import axios from 'axios';
 import Markdown from 'react-remarkable';
@@ -29,7 +29,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get('/posts')
+    axios.get('/posts/brief')
       .then(function (response) {
         var t = String(response.data);
         this.setState({text: t});
