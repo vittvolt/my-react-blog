@@ -11,12 +11,10 @@ const fs = require('fs');
 // - Read the # of files first, return the information to the client,
 // which is used during initialization
 
-var numOfPosts;
-let postsDir = path.resolve('dist', 'posts');
-fs.readdir(postsDir, (err, files) => {
-  console.log("There are currently %d posts.", files.length);
-  numOfPosts = files.length;
-});
+const Database = require('../components/database');
+const db = new Database();
+console.log(db.getPostContent(1));
+console.log(db.getPostTitle(1));
 
 // The index page
 app.get('/', (req, res) => {
@@ -45,25 +43,12 @@ app.get('/*.ttf', (req, res) => {
   res.sendFile(path.resolve('dist', '.' + req.originalUrl));
 });
 
-// In fonts folder ?
-app.get('/fonts/*.css', (req, res) => {
-  res.sendFile(path.resolve('dist', 'fonts', 'source-sans-pro.css')); // if you think hardcoding is bad, change it yourself
-});
-
 // return the brief information (titles, simple description, etc.)
 app.get('/posts/brief', (req, res) => {
-  let mdfile = path.resolve('dist', 'posts', 'post1.md');
-  fs.readFile(mdfile, "utf8", (err, data) => {
-    if (err) {
-      console.log('Boom !');
-      res.send('A fatal error occured...')
-    } else {
-      res.send(data);
-    }
-  });
+  res.send(db.getPostTitles());
 });
 
-// The left is for pickup client-side path routing (liking when refreshing / providing a complete url)
+// Anything left is for picking up client-side path routing (liking when refreshing / providing a complete url)
 app.get('*', (req, res) => {
   res.sendFile(path.resolve('dist', './index.html'));
 });

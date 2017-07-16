@@ -1,0 +1,27 @@
+.Posts-list {
+    margin: 0;
+    max-width: 80%;
+    width: 50%;
+    margin: 40px auto;
+}
+
+.Posts-list li {
+    list-style-type: none;
+    position: relative;
+    font-size: 1.5rem;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: transparent;
+    color: #fff;
+}
+
+.Posts-list li h4 {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.Posts-list li p {
+    font-size: .9rem;
+    line-height: 1.4rem;
+    margin-top: 15px;
+}
