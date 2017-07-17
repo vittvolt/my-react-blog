@@ -44,3 +44,14 @@
     line-height: 1.4rem;
     margin-top: 15px;
 }
+
+.Post-text {
+    font-family: 'Kreon', arial, sans-serif;
+    color: white;
+    font-size: 1.4rem;
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Kreon');

@@ -14,7 +14,7 @@ class Posts extends Component {
               return <li key={m.index}>
                 <Link className='Post-link' to={'/allposts/' + m.index.toString()}> {m.title} </Link>
                 <hr/>
-                <p> Well... </p>
+                <p> ... </p>
               </li>
             }.bind(this))
           }

@@ -83,7 +83,7 @@ class App extends Component {
            * Displaying a single post
            */}
           <Route path='/allposts/:postId' render={(props) => (
-            <Post {...props} class='App-text' />
+            <Post {...props} />
           )}/>
 
         </div>

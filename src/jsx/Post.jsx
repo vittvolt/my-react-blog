@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Markdown from 'react-remarkable';
 import axios from 'axios';
 
+import '../css/Posts.css';
+
 class Post extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +23,7 @@ class Post extends Component {
   }
 
   render() {
-    return <div className={this.props.class}>
+    return <div className='Post-text'>
       <Markdown>
         {this.state.text}
       </Markdown>

@@ -39,12 +39,13 @@ class Database {
         }
     }
 
+    // The order is reversed in the posts array
     getPostContent(index) {
-        return this.posts[index].content;
+        return this.posts[this.posts.length - index - 1].content;
     }
 
     getPostTitle(index) {
-        return this.posts[index].title;
+        return this.posts[this.posts.length - index - 1].title;
     }
 
     getPostTitles() {
