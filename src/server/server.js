@@ -13,7 +13,6 @@ const fs = require('fs');
 
 const Database = require('../components/database');
 const db = new Database();
-console.log(db.getPostContent(1));
 console.log(db.getPostTitle(1));
 
 // The index page
@@ -46,6 +45,11 @@ app.get('/*.ttf', (req, res) => {
 // return the brief information (titles, simple description, etc.)
 app.get('/posts/brief', (req, res) => {
   res.send(db.getPostTitles());
+});
+
+// return the content for that post
+app.get('/posts/:postId', (req, res) => {
+  res.send(db.getPostContent(req.param('postId')));
 });
 
 // Anything left is for picking up client-side path routing (liking when refreshing / providing a complete url)

@@ -18,7 +18,7 @@ class Menu extends Component {
 
         return (
             <div>
-                <ul className="menu-list">{ this.props.items.map(function(m, index){
+                <ul className="menu-list">{ this.props.items.map(function(m, index) {
 
                     return <li onClick={self.clicked.bind(self, index)} key={m.id}>
                         <p className='Neon-p'>

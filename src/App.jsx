@@ -6,6 +6,7 @@ import axios from 'axios';
 import Markdown from 'react-remarkable';
 import { BrowserRouter, Route } from 'react-router-dom';
 import Posts from './jsx/Posts.jsx';
+import Post from './jsx/Post.jsx';
 
 // The tabs at the top
 const tabs = [
@@ -24,7 +25,7 @@ class App extends Component {
     this.state = {
       currIndex: 0,
       welcomeStr: welcome,
-      text: "",
+      text: "Test ...",
       aboutText: welcome,
 
       titles: []
@@ -70,12 +71,19 @@ class App extends Component {
             <Content {...props} art={1} text={this.state.welcomeStr} class={"App-welcome"} />
           )}/>
 
-          <Route path='/allposts' render={props => (
+          <Route exact path='/allposts' render={props => (
             <Posts {...props} titles={this.state.titles} />
           )}/>
 
           <Route path='/about' render={props => (
             <Content {...props} text={this.state.aboutText} class={"App-welcome"} />
+          )}/>
+
+          {/**
+           * Displaying a single post
+           */}
+          <Route path='/allposts/:postId' render={(props) => (
+            <Post {...props} class='App-text' />
           )}/>
 
         </div>

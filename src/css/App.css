@@ -42,7 +42,9 @@ body {
   color: #228DFF;
   /*font-family: Iceland;*/
   font: 400 100px/1.3 'Lobster Two', Helvetica, sans-serif;
+}
 
+.Neon-p .Blue-neon:hover {
   -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
   -moz-animation: neon2 1.5s ease-in-out infinite alternate;
   animation: neon2 1.5s ease-in-out infinite alternate;
@@ -137,7 +139,7 @@ body {
   right: 12px;
   top: 60px;
   color: purple;
-  font-size: 40pt;
+  font-size: 35pt;
   font-weight: bold;
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);

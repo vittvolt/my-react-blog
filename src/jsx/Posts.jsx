@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Markdown from 'react-remarkable';
+import { Link } from 'react-router-dom';
 
 import '../css/Posts.css';
 
@@ -12,7 +12,8 @@ class Posts extends Component {
           {
             this.props.titles.map(function(m, index) {
               return <li key={m.index}>
-                <h4> this.state.titles.title </h4>
+                <Link className='Post-link' to={'/allposts/' + m.index.toString()}> {m.title} </Link>
+                <hr/>
                 <p> Well... </p>
               </li>
             }.bind(this))

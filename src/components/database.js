@@ -12,7 +12,7 @@ class Database {
 
         // Array of actual
         // {title : ... , content : ...}
-        this.posts = [];
+        this.posts = [];    // for now used for temporary storage
 
         // Load the posts
         this.countPosts();
@@ -22,21 +22,19 @@ class Database {
     countPosts() {
         var self = this;
         let postsDir = path.resolve('dist', 'posts');
-        console.log(postsDir.toString());
         let files = fs.readdirSync(postsDir);
         this.numOfPosts = files.length;
     }
 
     loadPosts() {
-        for (var i = 0; i < this.numOfPosts; i++) {
+        for (var i = this.numOfPosts - 1; i >= 0; i--) {
             let mdfile = path.resolve('dist', 'posts', 'post' + i.toString() + ".md");
-            console.log(mdfile.toString());
             let content = fs.readFileSync(mdfile, "utf8");
 
             let first_line = content.split('\n')[0];
             let title = first_line.substr(2);
 
-            let temp = { 'title': title, 'content': content };
+            let temp = { 'title': title, 'content': content, 'id': i };
             this.posts.push(temp);
         }
     }
@@ -52,7 +50,7 @@ class Database {
     getPostTitles() {
         var titles = [];
         this.posts.forEach((value, index) => {
-            let temp = { 'title': value.title, 'index': index };
+            let temp = { 'title': value.title, 'index': value.id };
             titles.push(temp);
         });
         return titles;
