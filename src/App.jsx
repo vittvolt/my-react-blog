@@ -13,10 +13,11 @@ const tabs = [
   {'id' : 1, 'title' : 'Home', 'route' : '/home'},
   {'id' : 2, 'title' : 'Posts', 'route' : '/allposts'},
   {'id' : 3, 'title' : 'About', 'route' : '/about'}
-]
+];
 
 // Welcome string
-const welcome = "Been there, never done that"
+const welcome = "An experimental blog.";
+const about = "Been there, never done that.";
 
 class App extends Component {
   constructor(props) {
@@ -26,7 +27,7 @@ class App extends Component {
       currIndex: 0,
       welcomeStr: welcome,
       text: "Test ...",
-      aboutText: welcome,
+      aboutText: about,
 
       titles: []
     };
@@ -63,12 +64,12 @@ class App extends Component {
           <Menu items={ tabs } handleClick={this.handleClick.bind(this)} />
 
           <Route path='/home' render={(props) => (
-            <Content {...props} art={1} text={this.state.welcomeStr} class={"App-welcome"} />
+            <Welcome {...props} art={1} text={this.state.welcomeStr} class={"App-text"} />
           )}/>
 
           {/* Default route is the home component as well */}
           <Route exact path='/' render={(props) => (
-            <Content {...props} art={1} text={this.state.welcomeStr} class={"App-welcome"} />
+            <Welcome {...props} art={1} text={this.state.welcomeStr} class={"App-text"} />
           )}/>
 
           <Route exact path='/allposts' render={props => (
@@ -107,6 +108,18 @@ class Content extends Component {
             {this.props.text}
           </Markdown>
         }
+      </div>
+    );
+  }
+}
+
+class Welcome extends Component {
+  render() {
+    return (
+      <div className='App-text'>
+        <p>
+          {this.props.text}
+        </p>
       </div>
     );
   }

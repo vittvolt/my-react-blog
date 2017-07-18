@@ -78,12 +78,13 @@ body {
 }
 
 .App-text {
-  font-family: Helvetica, arial, sans-serif;
+  font-family: 'Kreon', arial, sans-serif;
   color: white;
-  font-size: 20px;
+  font-size: 1.9rem;
   width: 50%;
   margin: 0 auto;
-  text-align: left;
+  margin-top: 80px;
+  text-align: center;
   /*
   border:1px solid black;
   padding: 20px;
@@ -188,3 +189,5 @@ body {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px purple, 0 0 35px purple, 0 0 40px purple, 0 0 50px purple, 0 0 75px purple;
   }
 }
+
+@import url('https://fonts.googleapis.com/css?family=Kreon');
