@@ -7,12 +7,11 @@ const path = require('path');
 class Database {
     constructor() {
         // Currently in-memory only
-        // let Datastore = require('nedb');
-        // this.db = new Datastore();
+        let Datastore = require('nedb');
+        this.db = new Datastore();
 
-        // Array of actual
-        // {title : ... , content : ...}
-        this.posts = [];    // for now used for temporary storage
+        // Map of posts meta info
+        this.posts = new Map();    // for now used for temporary storage
 
         // Load the posts
         this.countPosts();
@@ -34,26 +33,36 @@ class Database {
             let first_line = content.split('\n')[0];
             let title = first_line.substr(2);
 
-            let temp = { 'title': title, 'content': content, 'id': i };
-            this.posts.push(temp);
+            let temp = { 'title': title, 'brief': '...', 'index' : i };
+            this.posts.set(i, temp);
+
+            let postDbObj = { 'content': content, _id : i };
+            this.db.insert(postDbObj, function(err, newDoc) {
+                if (err) {
+                    console.log('=== Boom! ===');
+                    throw err;
+                }
+            });
         }
     }
 
     // The order is reversed in the posts array
-    getPostContent(index) {
-        return this.posts[this.posts.length - index - 1].content;
+    getPostContent(index, callback) {
+        var self = this;
+        this.db.find({ _id : parseInt(index) }, function(err, docs) {
+            callback(docs[0].content);
+        })
     }
 
     getPostTitle(index) {
-        return this.posts[this.posts.length - index - 1].title;
+        return this.posts.get(index).title;
     }
 
     getPostTitles() {
         var titles = [];
-        this.posts.forEach((value, index) => {
-            let temp = { 'title': value.title, 'index': value.id };
-            titles.push(temp);
-        });
+        for (var i = this.numOfPosts - 1; i >= 0; i--) {
+            titles.push(this.posts.get(i))
+        }
         return titles;
     }
 }

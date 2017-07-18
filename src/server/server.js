@@ -49,7 +49,9 @@ app.get('/posts/brief', (req, res) => {
 
 // return the content for that post
 app.get('/posts/:postId', (req, res) => {
-  res.send(db.getPostContent(req.params.postId));
+  db.getPostContent(req.params.postId, function(content) {
+    res.send(content);
+  });
 });
 
 // Anything left is for picking up client-side path routing (liking when refreshing / providing a complete url)
