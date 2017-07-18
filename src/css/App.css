@@ -1,11 +1,13 @@
 body {
   /* http://lea.verou.me/css3patterns/#weave */
+  /*
   background:
   linear-gradient(135deg, #222222 33px, #353535 33px, #353535 36px, transparent 36px, transparent 100.5px, #353535 100.5px, #353535 103.5px, transparent 103.5px),
   linear-gradient(225deg, #222222 33px, #353535 33px, #353535 36px, transparent 36px, transparent 100.5px, #353535 100.5px, #353535 103.5px, transparent 103.5px)0 96px;
-  background-color:#222222;
+  */
+  background-color: #222222;
   /* This size defines the size of each linear-gradient image */
-  background-size: 96px 192px;
+  /* background-size: 96px 192px; */
 }
 
 .App {
