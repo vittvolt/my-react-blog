@@ -17,21 +17,18 @@ class Menu extends Component {
         var self = this;
 
         return (
-            <div>
+            <nav className='menu-nav'>
                 <ul className="menu-list">{ this.props.items.map(function(m, index) {
 
                     return <li onClick={self.clicked.bind(self, index)} key={m.id}>
-                        <p className='Neon-p'>
-                            <Link to={m.route} className='Blue-neon'>
-                                {m.title}
-                            </Link>
-                        </p>
+                        <Link to={m.route} className='menu-text'>
+                            {m.title}
+                        </Link>
                     </li>;
 
                 }) }
-
                 </ul>
-            </div>
+            </nav>
         );
 
     }

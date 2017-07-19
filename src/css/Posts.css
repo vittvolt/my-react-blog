@@ -35,10 +35,9 @@ hr {
     margin-bottom: 1.33em;
     margin-left: 0;
     margin-right: 0;
-    font-weight: bold;
 
     color: #FF9900;
-    font-family: Audiowide;
+    font-family: 'Passion One', cursive, Audiowide;
 }
 
 .Post-link:link, .Post-link:visited, .Post-link:hover, .Post-link:active {
@@ -58,6 +57,8 @@ hr {
     width: 50%;
     margin: 0 auto;
     text-align: left;
+    margin-top: 120px;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Kreon');
+@import url('https://fonts.googleapis.com/css?family=Passion+One');
