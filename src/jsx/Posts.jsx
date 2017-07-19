@@ -10,11 +10,11 @@ class Posts extends Component {
       <div>
         <ul className='Posts-list'>
           {
-            this.props.titles.map(function(m, index) {
+            this.props.posts.map(function(m, index) {
               return <li key={m.index}>
                 <Link className='Post-link' to={'/allposts/' + m.index.toString()}> {m.title} </Link>
                 <hr/>
-                <p> ... </p>
+                <p> {m.brief} </p>
               </li>
             }.bind(this))
           }

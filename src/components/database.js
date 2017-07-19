@@ -32,8 +32,9 @@ class Database {
 
             let first_line = content.split('\n')[0];
             let title = first_line.substr(2);
+            let brief = this.getContentBrief(content);
 
-            let temp = { 'title': title, 'brief': '...', 'index' : i };
+            let temp = { 'title': title, 'brief': brief + "\n...", 'index' : i };
             this.posts.set(i, temp);
 
             let postDbObj = { 'content': content, _id : i };
@@ -64,6 +65,11 @@ class Database {
             titles.push(this.posts.get(i))
         }
         return titles;
+    }
+
+    getContentBrief(content) {
+        let line = content.split('\n')[2];
+        return line;
     }
 }
 

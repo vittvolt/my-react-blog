@@ -29,14 +29,14 @@ class App extends Component {
       text: "Test ...",
       aboutText: about,
 
-      titles: []
+      posts: []
     };
   }
 
   componentDidMount() {
-    axios.get('/posts/brief')
+    axios.get('/posts/meta')
       .then(function (response) {
-        this.setState({titles: response.data});
+        this.setState({ posts: response.data });
         console.log(response.data);
       }.bind(this))
       .catch(function (error) {
@@ -73,7 +73,7 @@ class App extends Component {
           )}/>
 
           <Route exact path='/allposts' render={props => (
-            <Posts {...props} titles={this.state.titles} />
+            <Posts {...props} posts={this.state.posts} />
           )}/>
 
           <Route path='/about' render={props => (

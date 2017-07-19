@@ -43,7 +43,7 @@ app.get('/*.ttf', (req, res) => {
 });
 
 // return the brief information (titles, simple description, etc.)
-app.get('/posts/brief', (req, res) => {
+app.get('/posts/meta', (req, res) => {
   res.send(db.getPostTitles());
 });
 
