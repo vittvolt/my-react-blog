@@ -16,13 +16,14 @@
     font-family: Audiowide;
 
     border-radius: 25px;
-    border: 2px solid #f6f6f6;
+    border: 6px solid #f6f6f6;
 }
 
 hr {
     color: #f6f6f6;
     background-color: #f6f6f6;
     border-color: #f6f6f6;
+    height: 4px;
 }
 
 .Posts-list li .Post-link {

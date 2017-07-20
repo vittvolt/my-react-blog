@@ -37,7 +37,6 @@ class App extends Component {
     axios.get('/posts/meta')
       .then(function (response) {
         this.setState({ posts: response.data });
-        console.log(response.data);
       }.bind(this))
       .catch(function (error) {
         console.log(error);
