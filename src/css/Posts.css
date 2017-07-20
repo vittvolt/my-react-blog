@@ -30,6 +30,7 @@ hr {
     position: relative;
     padding-bottom: 10px;
     text-decoration: none;
+    overflow: hidden;
 
     display: block;
     margin-top: 1.33em;
@@ -39,6 +40,37 @@ hr {
 
     color: #FF9900;
     font-family: 'Passion One', cursive, Audiowide;
+}
+
+/* The hidden element for the effect */
+/* http://jsfiddle.net/AntonTrollback/nqQc7/ */
+.Post-link:after {
+    content: "";
+    position: absolute;
+    top: -110%;
+    left: -210%;
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+    transform: rotate(30deg);
+
+    background: rgba(255, 255, 255, 0.13);
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.13) 0%,
+        rgba(255, 255, 255, 0.13) 77%,
+        rgba(255, 255, 255, 0.5) 92%,
+        rgba(255, 255, 255, 0.0) 100%
+    );
+}
+
+.Post-link:hover:after {
+    opacity: 1;
+    top: -30%;
+    left: 120%;
+    transition-property: left, top, opacity;
+    transition-duration: 1.6s, 1.6s, 0.15s;
+    transition-timing-function: ease;
 }
 
 .Post-link:link, .Post-link:visited, .Post-link:hover, .Post-link:active {
