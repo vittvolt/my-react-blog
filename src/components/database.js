@@ -51,7 +51,15 @@ class Database {
     getPostContent(index, callback) {
         var self = this;
         this.db.find({ _id : parseInt(index) }, function(err, docs) {
-            callback(docs[0].content);
+            if (err) {
+                callback("Error...");
+            } else {
+                if (docs[0] === undefined || docs[0].content === undefined) {
+                    callback("Error...");
+                } else {
+                    callback(docs[0].content);
+                }
+            }
         })
     }
 
