@@ -14,6 +14,7 @@
     background: transparent;
     color: #FF9900;
     font-family: Audiowide;
+    overflow: hidden;
 
     border-radius: 25px;
     border: 6px solid #f6f6f6;
@@ -30,7 +31,6 @@ hr {
     position: relative;
     padding-bottom: 10px;
     text-decoration: none;
-    overflow: hidden;
 
     display: block;
     margin-top: 1.33em;
@@ -69,7 +69,7 @@ hr {
     top: -30%;
     left: 120%;
     transition-property: left, top, opacity;
-    transition-duration: 1.6s, 1.6s, 0.15s;
+    transition-duration: 1.1s, 1.1s, 0.15s;
     transition-timing-function: ease;
 }
 
